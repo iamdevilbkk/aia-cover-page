@@ -1,87 +1,1484 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="th">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.1">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อเสนอ AIA Issara Plus (Unit Linked) สำหรับคุณเกียรติอนันต์</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Sarabun:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. Prestige Theme & Base Setup --- */
+        :root {
+            --navy: #001F3F;      /* AIA Deep Navy */
+            --gold: #B48811;      /* Prestige Gold */
+            --charcoal: #333333;  /* Charcoal Text */
+            --white: #FFFFFF;
+            --light-bg: #F9F9F9;  /* Light Cream/Gray Background */
+            --font-heading: 'Inter', 'Sarabun', sans-serif;
+            --font-body: 'Sarabun', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--charcoal);
+            background-color: var(--white);
+            line-height: 1.7;
+        }
+
+        /* --- 2. Scrollytelling Container --- */
+        .presentation-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+
+        .slide {
+            height: 100vh;
+            width: 100%;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 5% 40px 5%; /* เพิ่ม padding ด้านบนสำหรับ nav */
+            position: relative;
+            background-color: var(--white);
+            overflow: hidden; 
+        }
+
+        .slide:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+        
+        /* --- 2.1 Sticky Header Nav --- */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 31, 63, 0.95); /* --navy with slight transparency */
+            backdrop-filter: blur(5px);
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .sticky-nav a {
+            font-family: var(--font-heading);
+            color: var(--white);
+            text-decoration: none;
+            padding: 5px 12px; 
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .sticky-nav a:hover {
+            color: var(--gold);
+        }
+        .sticky-nav .nav-logo {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1rem;
+            border-right: 1px solid var(--gold);
+            padding-right: 15px;
+            margin-right: 5px;
+        }
+
+        /* --- 3. Slide Content Styling --- */
+        .content-wrapper {
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; color: var(--navy); }
+        h3 { font-size: 1.8rem; color: var(--gold); }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .slide-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: -15px; /* Pull it closer to the H2 */
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* --- 4. Specific Slide Styles --- */
+
+        /* Slide 1: Cover */
+        .cover-slide {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+        .cover-slide h1, .cover-slide h3, .cover-slide p {
+            color: var(--white);
+            max-width: none; 
+        }
+        .cover-slide h1 {
+            color: var(--gold);
+            font-size: 3rem;
+            margin-bottom: 10px; 
+        }
+        .cover-slide h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 5px; 
+        }
+        .cover-slide .issue-date {
+            font-family: var(--font-body);
+            font-size: 1.0rem;
+            color: var(--white);
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        .cover-slide .cover-subtitle-tagline {
+            font-size: 1.2rem; 
+            color: #ddd; 
+            margin-top: 10px; 
+            margin-bottom: 0;
+        }
+        .cover-slide .cover-subtitle-product {
+            font-size: 1.5rem; 
+            color: var(--gold); 
+            margin: 5px 0 0 0; 
+            font-weight: 600; 
+            letter-spacing: 0.5px;
+        }
+        .cover-slide .presenter {
+            font-size: 0.9rem; 
+            color: var(--gold);
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            text-align: left;
+            line-height: 1.5; 
+        }
+        .cover-slide .presenter-name {
+            font-size: 1.0rem; 
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        /* --- Slide 2: The Risk (REVISED) --- */
+        .risk-container { 
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px;
+            text-align: left;
+            margin-top: 40px;
+        }
+        .risk-card {
+            background: var(--white);
+            border: 2px solid var(--navy);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .risk-card.urgent {
+            border-color: #D9534F; /* Red border for urgent */
+        }
+        .risk-card .risk-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+        .risk-card.urgent .risk-title {
+            color: #D9534F;
+        }
+        .risk-card p {
+            font-size: 1.0rem;
+            max-width: none; 
+        }
+        .risk-card ul {
+            font-size: 1.0rem;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .risk-card .impact {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        /* --- SLIDE 3, 5: Strategy Grid --- */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px; 
+            margin-top: 40px;
+        }
+        .strategy-card {
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px; 
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; 
+            flex-direction: column; 
+        }
+        .strategy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .strategy-card .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem; 
+            color: var(--gold);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        /* Specific style for the consolidated list */
+        .strategy-card .consolidated-list {
+            padding-left: 20px;
+            font-size: 0.9rem; 
+            text-align: left;
+            flex-grow: 1;
+        }
+        .strategy-card .consolidated-list li {
+            margin-bottom: 10px;
+        }
+        .strategy-card ul { 
+            padding-left: 20px;
+            flex-grow: 1;
+        }
+        .strategy-card .card-goal { 
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-top: 20px;
+        }
+
+
+        /* Slide 4: The Solution (Issara Plus) */
+        .solution-img {
+            width: 80%;
+            max-width: 800px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease; 
+            cursor: zoom-in; 
+        }
+        .solution-img:hover {
+            transform: scale(1.02); 
+        }
+        #solution p {
+            max-width: none;
+        }
+
+        /* +++++ NEW: ALLOW TALL SLIDES TO SCROLL +++++ */
+        #pivot-factors, #new-comparison {
+            overflow-y: auto; /* Allow this slide to scroll internally */
+            justify-content: flex-start; /* Align content to the top */
+            padding-top: 100px; /* More space from nav */
+        }
+        /* +++++ END NEW RULE +++++ */
+
+
+        /* +++++ PIVOT TABLE STYLING +++++ */
+        .comparison-table-new {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 30px;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden; /* For border-radius */
+        }
+        .comparison-table-new th, .comparison-table-new td {
+            padding: 18px 25px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .comparison-table-new th {
+            background-color: var(--navy);
+            color: var(--gold);
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+        }
+        .comparison-table-new td:first-child {
+            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 1.1rem;
+        }
+        .comparison-table-new td {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+        }
+        
+        /* +++++ CSS FIX FOR PROBLEM 1 (COLOR) AND REMOVED BORDER +++++ */
+        .comparison-table-new th.col-option3 { color: var(--gold); } /* Ensure Option3 header is gold */
+        .comparison-table-new td.col-option3 {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--navy);
+            border-left: none; /* REMOVE BORDER */
+        }
+        .comparison-table-new td.col-option4 {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--gold); /* Highlight Option 4 */
+            font-size: 1.15rem;
+            border-left: none; /* REMOVE BORDER */
+        }
+        .comparison-table-new th.col-option4 {
+            border-left: none; /* REMOVE BORDER */
+        }
+        /* +++++ END CSS FIX +++++ */
+
+        .comparison-table-new tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table-new .highlight-row td {
+            background-color: var(--light-bg);
+            font-weight: 700;
+        }
+        .comparison-table-new .highlight-row .col-option4 {
+            font-size: 1.25rem;
+        }
+
+
+        /* --- SLIDE: Fund Cards --- */
+        #funds .content-wrapper {
+             overflow-y: auto; 
+             height: calc(100vh - 120px); 
+             justify-content: flex-start;
+        }
+        #funds h3.fund-category-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            text-align: left;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--navy);
+            padding-bottom: 10px;
+        }
+        .fund-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 0; 
+        }
+        .fund-card {
+            background: var(--white);
+            border: 2px solid #ddd; 
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .fund-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold); 
+            box-shadow: 0 8px 25px rgba(180, 136, 17, 0.2); 
+        }
+        .fund-card h4 {
+            font-family: var(--font-heading);
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .fund-card p {
+            font-size: 0.9rem; 
+            margin-bottom: 10px; 
+            line-height: 1.4; 
+        }
+        .fund-card a {
+            text-decoration: none;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            display: inline-block;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .fund-card a:hover {
+            background-color: var(--navy);
+            color: var(--gold);
+        }
+
+        /* --- Slide: Contact --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            text-align: left;
+            align-items: start; 
+        }
+        .contact-grid img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 10px;
+        }
+        .contact-info {
+            text-align: left; 
+        }
+        .contact-info h3 {
+             text-align: left; 
+             margin-top: 0; 
+        }
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            text-align: left; 
+        }
+        .contact-info .license {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Slide: Appendix & CTA */
+        #appendix {
+            overflow-y: auto; 
+            justify-content: flex-start; 
+        }
+        
+        /* Prestige Document Cards */
+        .appendix-grid {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+        .doc-card {
+            background: var(--white);
+            border: 2px solid #ddd; 
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+        .doc-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold); 
+            box-shadow: 0 8px 25px rgba(180, 136, 17, 0.2); 
+        }
+        .doc-card:hover .doc-icon,
+        .doc-card:hover .doc-card-action a {
+             color: var(--gold); 
+        }
+        .doc-card-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .doc-card-content .doc-icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease; 
+        }
+        .doc-card-content .doc-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        .doc-card-content .doc-desc {
+            font-size: 0.9rem;
+            color: #555; 
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+        .doc-card-action {
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+            background: var(--light-bg);
+            border-radius: 0 0 8px 8px;
+        }
+        .doc-card-action a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        /* Disclaimer Box */
+        .disclaimer-box {
+            max-width: 900px;
+            margin: 30px auto 0 auto; /* Centered block */
+            padding: 25px;
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .disclaimer-box p {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .disclaimer-box ul {
+            font-size: 0.8rem;
+            color: #888;
+            text-align: left;
+            margin-left: 20px; 
+        }
+        .disclaimer-box li {
+             margin-bottom: 5px;
+        }
+
+
+        /* --- 5. Modal Styles (Common) --- */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background: var(--white);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            height: 80vh; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .modal-header {
+            flex-shrink: 0; 
+            padding: 30px 40px 20px 40px;
+            position: relative;
+            border-bottom: 2px solid var(--gold);
+        }
+        .modal-header h2 {
+            color: var(--navy);
+            margin: 0;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #aaa;
+            font-family: 'Inter', sans-serif;
+        }
+        .modal-close:hover {
+            color: var(--charcoal);
+        }
+        
+        .modal-body {
+            flex-grow: 1; 
+            overflow-y: auto; 
+            padding: 30px 40px;
+        }
+
+        /* --- 5.1 Glossary Modal Specifics --- */
+        #glossary-search {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        #glossary-search:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .glossary-item {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        .glossary-item h4 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .glossary-item p {
+            font-size: 1rem;
+            margin-bottom: 0;
+            max-width: 100%;
+            text-align: left;
+            white-space: pre-wrap; /* Preserve line breaks from user */
+        }
+        .glossary-group-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        /* --- 5.2 Fund Modal Specifics --- */
+        .fund-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .fund-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .fund-list-item:last-child {
+            border-bottom: none;
+        }
+        .fund-list-item h4 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin: 0;
+        }
+        .fund-list-item p {
+             font-size: 1rem;
+             color: #555;
+             margin: 0;
+        }
+        .fund-list-item a {
+            text-decoration: none;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+        .fund-list-item a:hover {
+            background-color: var(--navy);
+            color: var(--gold);
+        }
+
+        /* --- 5.3 Image Modal Specifics --- */
+        .image-modal-content {
+            background: none;
+            box-shadow: none;
+            overflow: visible; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100%; 
+            width: 100%;
+        }
+        .image-modal-content img {
+            max-width: 90vw; 
+            max-height: 90vh; 
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        #image-modal .modal-close {
+            color: #ffffff; 
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5); 
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            z-index: 102; 
+        }
+        .modal-close-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: default;
+            z-index: 101;
+        }
+
+
+        /* --- 6. Scroll Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animated {
+            opacity: 0; /* Start hidden */
+        }
+
+        .do-animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .do-animate-spotlight {
+            animation: fadeInScaleUp 0.5s ease-out forwards;
+        }
+
+        .value-spotlight {
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: var(--navy); 
+            display: inline-block; 
+            font-size: 1.1em; /* Make it slightly bigger */
+        }
+
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="th"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;ข้อเสนอแผนประกันควบการลงทุนเพื่ออนาคตของเอลิเซีย&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Meta Tags for Social Sharing (LINE, Facebook, etc.) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta property="og:title" content="ข้อเสนอแผนประกันควบการลงทุนเพื่ออนาคตของเอลิเซีย" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta property="og:description" content="เสนอโดย: นายเปรมวิชช์ กรสิงห์วิจิตร (ต้น)" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta property="og:image" content="https://i.postimg.cc/d1Q3bWp7/AIA-Proposal-Cover-Thai.png" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta property="og:url" content="#" /&gt; &lt;!-- You can put the final URL of this cover page here --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta property="og:type" content="website" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Sarabun', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f0f4f8;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body class="flex items-center justify-center min-h-screen"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="w-full max-w-2xl mx-auto bg-white rounded-xl shadow-2xl p-8 md:p-12 text-center transform hover:scale-105 transition-transform duration-300"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="https://i.postimg.cc/hPr8mS18/AIA-logo.png" alt="AIA Logo" class="h-16 mx-auto mb-8"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-3xl md:text-4xl font-bold text-[#007782] mb-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>ข้อเสนอ</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-3xl md:text-4xl font-bold text-[#007782] mb-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>แผนประกันควบการลงทุน (ยูนิตลิ้งค์)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="my-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-xl md:text-2xl font-bold text-[#D9534F]"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>AIA Issara Plus (Unit Linked)</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm md:text-base font-semibold text-[#D9534F] mt-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>แนบสัญญาเพิ่มเติมแบบ UDR : AIA Health Happy KIDS-UDR และ AIA HB Extra-UDR</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-left space-y-4 my-10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="border-b pb-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-500"&gt;เสนอ:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg font-semibold text-gray-800"&gt;คุณพ่อและคุณแม่น้องเอลิเซีย เพื่อ เด็กหญิงเอลิเซีย ศิริพรประสาร&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="border-b pb-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-500"&gt;เสนอโดย:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg font-semibold text-gray-800"&gt;นายเปรมวิชช์ กรสิงห์วิจิตร (ต้น)&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg font-semibold text-gray-800"&gt;เบอร์โทร : 061-5909555&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg font-semibold text-gray-800"&gt;อีเมลล์ : pkornsingwichitch@gmail.com&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://gemini.google.com/share/03277f6dd9ea"<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">           </span>target="_blank" rel="noopener noreferrer"</p>
-<p class="p1"><span class="Apple-converted-space">           </span>class="inline-block w-full bg-gradient-to-r from-[#D9534F] to-[#b8433f] text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 text-lg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>คลิกเพื่อเปิดเอกสารนำเสนอ</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
+
+    <nav class="sticky-nav">
+        <a href="#cover" class="nav-logo">คุณเกียรติอนันต์</a>
+        <a href="#challenge">สถานการณ์ปัจจุบัน</a>
+        <a href="#strategy">กลยุทธ์ 3-in-1</a>
+        <a href="#pivot-factors">3 ปัจจัย (เทียบแผนเดิม)</a> <a href="#new-comparison">ข้อเสนอใหม่ (ไม่รวม RTU)</a> <a href="#solution">เครื่องมือ (Unit Linked)</a>
+        <a href="#consolidation">สรุปความคุ้มครอง</a>
+        <a href="#investpro">การลงทุน (InvestPro)</a>
+        <a href="#funds">กองทุนรวม</a>
+        <a href="#appendix">ภาคผนวก</a>
+        <a href="#contact">ติดต่อเรา</a>
+    </nav>
+
+    <main class="presentation-container">
+
+        <section class="slide cover-slide" id="cover">
+            <div class="content-wrapper">
+                <p>ข้อเสนอที่ออกแบบเฉพาะสำหรับ</p>
+                <h3>คุณเกียรติอนันต์ บุญยะศิริโชค</h3>
+                <p class="issue-date">จัดทำเมื่อวันที่ 10 พฤศจิกายน 2568</p> 
+                <h1>A Sustainable Protection & Legacy Solution</h1>
+                <p class="cover-subtitle-tagline">เพื่อการวางแผนที่ยั่งยืน ผ่านแผนประกันชีวิตควบการลงทุน</p>
+                <p class="cover-subtitle-product">AIA ISSARA PLUS (UNIT LINKED)</p>
+            </div>
+            <div class="presenter">
+                <span class="presenter-name">เปรมวิชช์ กรสิงห์วิจิตร (ต้น)</span><br>
+                ตัวแทนประกันชีวิตและผู้แนะนำการลงทุน (IC License: IC087357)<br>
+                บริษัท เอไอเอ จำกัด
+            </div>
+        </section>
+
+        <section class="slide" id="challenge">
+            <div class="content-wrapper">
+                <h2>สถานการณ์ปัจจุบัน: ความเสี่ยง 2 ระลอก ที่ต้องจัดการก่อนเกษียณ</h2>
+                <p>หลังจากที่ผมได้กลับมาวิเคราะห์กรมธรรม์เดิมของท่านในเชิงลึกอีกครั้ง ผมพบประเด็นสำคัญ 2 ประการที่ **'เร่งด่วน'** และต้องวางแผนจัดการครับ</p>
+                
+                <div class="risk-container">
+                    <div class="risk-card urgent animated" data-animation="fade-in-up" data-delay="0.0">
+                        <div class="risk-title">ความเสี่ยงระลอกที่ 1 (เร่งด่วน)
+"ความคุ้มครองหลักกำลังจะสิ้นสุด"</div>
+                        <p>กรมธรรม์สะสมทรัพย์เล่มหนึ่ง (ซึ่งแนบสัญญาเพิ่มเติมสุขภาพหลักๆ ไว้) <strong>กำลังจะครบกำหนดสัญญาในปี 2576 (อีก 8 ปีข้างหน้า)</strong></p>
+                        <p class="impact">ผลกระทบคือ: สัญญาเพิ่มเติมสุขภาพที่ยอดเยี่ยมเหล่านี้ จะสิ้นสุดความคุ้มครองลงทั้งหมดโดยอัตโนมัติ:</p>
+                        <ul>
+                            <li>Health Cancer (ชดเชย 10,000/วัน)</li>
+                            <li>HSPG (เหมาจ่าย 2 ล้าน)</li>
+                            <li>HB Extra (ชดเชย 3,000/วัน)</li>
+                        </ul>
+                        <p>การรอทำประกันเล่มใหม่ในอีก 8 ปีข้างหน้า คือความเสี่ยงที่สุขภาพเราอาจไม่เหมือนเดิมครับ **การวางแผน "ทำเล่มใหม่" ในวันนี้ ขณะที่สุขภาพยังดีเยี่ยม คือกลยุทธ์ที่ดีที่สุดครับ**</p>
+                    </div>
+                    
+                    <div class="risk-card animated" data-animation="fade-in-up" data-delay="0.3">
+                        <div class="risk-title">ความเสี่ยงระลอกที่ 2 (ระยะยาว)
+"ความคุ้มครองที่เหลืออยู่"</div>
+                        <p>สำหรับกรมธรรม์อีกเล่มที่เหลืออยู่ แม้จะเป็นความคุ้มครองที่ดี แต่ก็มี 2 ประเด็นที่ต้องพิจารณาครับ:</p>
+                        <p class="impact">1. ความคุ้มครองไม่เพียงพอ:</p>
+                        <ul>
+                            <li>ค่าห้อง 2,200 บาท/คืน ซึ่งอาจไม่เพียงพอต่อค่ารักษาในปัจจุบัน</li>
+                        </ul>
+                        <p class="impact">2. ภาระเบี้ยที่เพิ่มตามอายุ:</p>
+                        <ul>
+                            <li>ความคุ้มครองที่เหลืออยู่ ยังคงมีภาระเบี้ยประกัน (PPR) ที่เพิ่มสูงขึ้นตามอายุ ซึ่งเป็นภาระที่ต้องบริหารจัดการในระยะยาว</li>
+                        </ul>
+                        <p><strong>เป้าหมายของเราคือ</strong> การสร้างแผนใหม่เพื่อ "อัปเกรด" ความคุ้มครองส่วนนี้ และ "สร้างแหล่งเงินทุน" เพื่อมาบริหารจัดการภาระเบี้ยที่เหลือนี้ครับ</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="slide" id="strategy">
+            <div class="content-wrapper">
+                <h2>กลยุทธ์ "3-in-1": ทางออกที่สมบูรณ์ด้วยแผนเดียว</h2>
+                <p>จากความเสี่ยง 2 ระลอกที่เราพบ เราจะใช้ AIA Issara Plus (Unit Linked) กรมธรรม์ใหม่นี้ เพื่อบรรลุ 3 เป้าหมายเชิงกลยุทธ์พร้อมกันครับ:</p>
+                <div class="strategy-grid">
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.0">
+                        <div class="card-title">1. "ทดแทน" และ "อัปเกรด"</div>
+                        <p>สร้างความคุ้มครองใหม่ (UDR) ที่ทันสมัยและดียิ่งขึ้น (เช่น Health Happy 5M, MPCI Plus 1M) เพื่อ **"ทดแทน"** ความคุ้มครองเดิมที่กำลังจะสิ้นสุดลง และ **"อัปเกรด"** ความคุ้มครองให้ครอบคลุมที่สุด</p>
+                    </div>
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.2">
+                        <div class="card-title">2. "กำหนด" ระยะเวลาชำระเบี้ย</div>
+                        <p>วางแผนชำระเบี้ยกรมธรรม์ "เล่มใหม่" นี้ในระยะเวลาที่แน่นอน (15 หรือ 20 ปี) โดยภาระเบี้ยไม่เพิ่มตามอายุ และ "หยุดชำระ" ในช่วงที่ยังบริหารธุรกิจอยู่</p>
+                        <div class="card-goal">หยุดชำระเบี้ย ณ อายุ 60 หรือ 65 ปี</div>
+                    </div>
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.4">
+                        <div class="card-title">3. "สร้าง" กองทุนบริหารความเสี่ยง</div>
+                        <p>ให้เงินลงทุนใน "เล่มใหม่" เติบโต เพื่อใช้เป็นแหล่งเงินทุนสำหรับจ่ายเบี้ยสุขภาพ UDR ใหม่ (ที่มาทดแทน) และเบี้ย PPR เดิม (ที่เหลืออยู่) ในวัยเกษียณ</p>
+                        <div class="card-goal">เป้าหมาย ~7 ล้านบาท<br>(ณ อายุ 85 ปี)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="pivot-factors">
+            <div class="content-wrapper">
+                <h2>ทำความเข้าใจ 3 ปัจจัย (เทียบกับแผน 4 ปีก่อน)</h2>
+                <p>เบี้ยประกันที่สูงขึ้นในวันนี้ มาจากการ "อัปเกรด" แผนประกันใน 3 มิติสำคัญ เพื่อให้เหมาะสมกับเป้าหมายและวัยที่เพิ่มขึ้นครับ</p>
+                <div class="strategy-grid">
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.0">
+                        <div class="card-title">1. ระยะเวลาชำระเบี้ย (สั้นลง)</div>
+                        <p><strong>แผนเดิม (อายุ 42):</strong> วางแผน 22 ปี (จบอายุ 63)<br>
+                           <strong>แผนใหม่ (อายุ 46):</strong> วางแผน 15 ปี (จบอายุ 60) หรือ 20 ปี (จบอายุ 65)</p>
+                        <p>เรากำลังวางแผนให้ "จบเร็วขึ้น" เพื่อให้ภาระสิ้นสุดลงในช่วงวัยเกษียณพอดีครับ</p>
+                    </div>
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.2">
+                        <div class="card-title">2. คุณภาพความคุ้มครอง (ดีขึ้น)</div>
+                        <p><strong>แผนเดิม (ECIR):</strong> "เจอ จ่าย จบ" (คุ้มครองเฉพาะระยะรุนแรง และโรคเดียว)
+                           <br><strong>แผนใหม่ (MPCI Plus):</strong> "เจอ จ่าย หลายจบ" (ครอบคลุมตั้งแต่ระยะเริ่มต้น, การกลับมาเป็นซ้ำ, และหลายกลุ่มโรค)</p>
+                        <p>เป็นการอัปเกรดความคุ้มครองที่สมบูรณ์แบบมากที่สุดในปัจจุบันครับ</p>
+                    </div>
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.4">
+                        <div class="card-title">3. ทุนประกัน CI (สูงขึ้น)</div>
+                        <p><strong>แผนเดิม:</strong> ทุน 500,000 บาท
+                           <br><strong>แผนใหม่:</strong> ทุน 1,000,000 บาท</p>
+                        <p>เพื่อปิดความเสี่ยงเรื่องค่ารักษาที่สูงขึ้น และที่สำคัญคือ "ล็อค" สิทธิ์สุขภาพที่ดีที่สุดไว้ ก่อนที่อายุจะเพิ่มขึ้นหรือมีประวัติสุขภาพในอนาคตครับ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slide" id="new-comparison">
+            <div class="content-wrapper">
+                <h2>ข้อเสนอใหม่: เปรียบเทียบ 2 ทางเลือก (ไม่รวมเบี้ยลงทุน RTU)</h2>
+                <p class="slide-subtitle">นี่คือ "ต้นทุนที่แท้จริง" ของความคุ้มครองทั้งหมดครับ</p>
+                <p style="max-width: 900px; margin-top: -10px; font-size: 1.0rem;">เราสามารถถอดเบี้ยลงทุน (RTU) ที่ "บังคับ" ชำระออกก่อนได้ เพื่อให้เห็นเบี้ยประกันที่แท้จริง และหากคุณเกียรติอนันต์ยังต้องการสร้างกองทุนเพื่อจัดการภาระเบี้ยเดิม ก็สามารถเติมเงินผ่าน ATU (แบบไม่บังคับ) ในจังหวะที่สะดวกได้ครับ</p>
+                
+                <table class="comparison-table-new">
+                    <thead>
+                        <tr>
+                            <th>รายละเอียด</th>
+                            <th class="col-option3">Option 3 (ปรับใหม่)</th>
+                            <th class="col-option4">Option 4 (ปรับใหม่)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>เบี้ยประกันสะสมตลอดสัญญา (15 หรือ 20 ปี)</td>
+                            <td class="col-option3">6,053,175</td>
+                            <td class="col-option4">6,870,900</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>เบี้ยประกันต่อปี (บาท)</td>
+                            <td class="col-option3">403,545</td>
+                            <td class="col-option4">343,545</td>
+                        </tr>
+                        <tr>
+                            <td>ทุนประกันชีวิต</td>
+                            <td class="col-option3">4,500,000</td>
+                            <td class="col-option4">3,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>MPCI Plus UDR ทุนประกัน</td>
+                            <td class="col-option3">1,000,000</td>
+                            <td class="col-option4">1,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>วางแผนชำระเบี้ย (ปี)</td>
+                            <td class="col-option3">15</td>
+                            <td class="col-option4">20</td>
+                        </tr>
+                        <tr>
+                            <td>เบี้ยหลักเพื่อความคุ้มครอง (RPP)</td>
+                            <td class="col-option3">190,000</td>
+                            <td class="col-option4">120,000</td>
+                        </tr>
+                        <tr>
+                            <td>เบี้ยประกันภัยเพิ่มเติม (RTU/ATU)</td>
+                            <td class="col-option3">0</td>
+                            <td class="col-option4">0</td>
+                        </tr>
+                        <tr>
+                            <td>เบี้ยสัญญาเพิ่มเติม UDR</td>
+                            <td class="col-option3">213,045</td>
+                            <td class="col-option4">213,045</td>
+                        </tr>
+                        <tr>
+                            <td>เบี้ยสัญญาเพิ่มเติม PPR</td>
+                            <td class="col-option3">10,500</td>
+                            <td class="col-option4">10,500</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>มูลค่า CV @ อายุ 85 (ที่ 5%) (ล้านบาท)</td>
+                            <td class="col-option3">0.38</td>
+                            <td class="col-option4">2.95</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="slide" id="solution">
+            <div class="content-wrapper">
+                <h2>เครื่องมือทางการเงินอัจฉริยะ: AIA ISSARA PLUS (UNIT LINKED)</h2>
+                <p>คือกุญแจสำคัญที่ทำให้กลยุทธ์ 3-in-1 นี้เป็นจริงได้ ด้วยโครงสร้างที่แยก 'ความคุ้มครอง' และ 'การลงทุน' ออกจากกัน ช่วยให้เราบริหารจัดการทั้งสามเป้าหมายได้อย่างอิสระและมีประสิทธิภาพสูงสุด</p>
+                <a href="#image-modal" style="display: inline-block; line-height: 0;">
+                    <img src="https://i.postimg.cc/tg3nRf0D/kho-rngsr-ang-baeb-pra-k-n-AIA-Issara-Plus-Unit-Linked.png" alt="AIA Issara Plus Structure" class="solution-img">
+                </a>
+            </div>
+        </section>
+        
+
+        <section class="slide" id="consolidation">
+            <div class="content-wrapper">
+                <h2>สรุปภาพรวมความคุ้มครอง (เดิม + ใหม่)</h2>
+                <p>รายละเอียดภาพรวมความคุ้มครอง ที่ครอบคลุมมากยิ่งขึ้นของคุณเกียรติอนันต์ (อ้างอิง Option 3/4)</p>
+                <div class="strategy-grid">
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.0">
+                        <div class="card-title" style="font-size: 1.2rem;">กลุ่มค่ารักษาพยาบาล/ชดเชย</div>
+                        <ul class="consolidated-list">
+                            <li><strong>ค่ารักษาเหมาจ่าย (รวม 2 แผน):</strong><br><span class="value-spotlight animated" data-animation="spotlight" data-delay="0.5">7,000,000 บาท/ปี</span></li>
+                            <li><strong>ค่าห้อง (แผนเดิม):</strong> 4,000 บาท/คืน</li>
+                            <li><strong>ค่าห้อง (แผนแยกค่าใช้จ่ายเดิม):</strong> 2,200 & 2,800 บาท/คืน</li>
+                            <li><strong>ค่าชดเชยรายวัน (เจ็บป่วย):</strong><br><span class="value-spotlight animated" data-animation="spotlight" data-delay="0.6">8,000 บาท/วัน</span></li>
+                        </ul>
+                    </div>
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.2">
+                        <div class="card-title" style="font-size: 1.2rem;">กลุ่มคุ้มครองโรคร้ายแรง</div>
+                        <ul class="consolidated-list">
+                            <li><strong>Multi-Pay CI (เจอ จ่าย หลายจบ):</strong><br><span class="value-spotlight animated" data-animation="spotlight" data-delay="0.7">1,000,000 บาท</span></li>
+                             <li><strong>ECIR (เจอ จ่าย จบ - เดิม):</strong> 300,000 บาท</li>
+                            <li><strong>ชดเชยรายวัน (มะเร็ง):</strong><br><span class="value-spotlight animated" data-animation="spotlight" data-delay="0.8">35,000 บาท/วัน</span></li>
+                            <li><strong>ทุนประกันชีวิต (เสียชีวิตจากมะเร็ง):</strong><br><span class="value-spotlight animated" data-animation="spotlight" data-delay="0.9">3,000,000 บาท</span></li>
+                        </ul>
+                    </div>
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.4">
+                        <div class="card-title" style="font-size: 1.2rem;">กลุ่มคุ้มครองอุบัติเหตุ</div>
+                         <ul class="consolidated-list">
+                            <li><strong>คุ้มครอง/ชดเชยอุบัติเหตุ (รวม 2 แผน):</strong><br><span class="value-spotlight animated" data-animation="spotlight" data-delay="1.0">ทุนประกัน 2,000,000 บาท</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="slide" id="investpro">
+            <div class="content-wrapper">
+                <h2>กลยุทธ์การลงทุน: บริการ AIA INVESTPRO</h2>
+                <p>เพื่อให้มั่นใจว่าการลงทุนจะเติบโตสู่เป้าหมายผลตอบแทน ~5% เอไอเอจึงมีบริการ "ผู้จัดการพอร์ตส่วนตัว" (AIA InvestPro) ที่คอยดูแลและบริหารจัดการพอร์ตการลงทุนนี้อย่างใกล้ชิดโดยเฉพาะ</p>
+                <div class="strategy-grid">
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.0">
+                        <div class="card-title">1. บริหารโดยผู้เชี่ยวชาญ</div>
+                        <p>พอร์ตการลงทุนของคุณจะได้รับการดูแลโดยผู้เชี่ยวชาญระดับโลก (เช่น BlackRock, Wellington) ที่ AIA คัดสรรมา</p>
+                    </div>
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.2">
+                        <div class="card-title">2. ปรับพอร์ตอัตโนมัติ</div>
+                        <p>มีการ "ปรับสัดส่วนการลงทุน (Rebalancing)" ให้อัตโนมัติ เพื่อให้พอร์ตคงสัดส่วนที่เหมาะสมตามสภาวะตลาดที่เปลี่ยนแปลงไป</p>
+                    </div>
+                    <div class="strategy-card animated" data-animation="fade-in-up" data-delay="0.4">
+                        <div class="card-title">3. พอร์ตที่เหมาะกับคุณ</div>
+                        <p>เราจะเริ่มต้นด้วยการทำ Suitability Test เพื่อเลือก "พอร์ตโฟลิโอที่แนะนำ" (Recommended Portfolio) ที่เหมาะสมกับความเสี่ยงของคุณ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="funds">
+            <div class="content-wrapper">
+                <h2>กองทุนรวมที่คัดสรรโดย บลจ.เอไอเอ (AIA ASSET ALLOCATION FUNDS)</h2>
+                <p>นี่คือ 'เครื่องยนต์' สำคัญที่จะขับเคลื่อนมูลค่าการลงทุนในกรมธรรม์ของคุณ</p>
+                
+                <h3 class="fund-category-title">กลุ่มที่ 1: ลงทุนในประเทศ (Domestic Allocation)</h3>
+                <div class="fund-grid">
+                    <div class="fund-card">
+                        <h4>AIA-TCA</h4>
+                        <p>(Conventional Allocation)<br><strong>ความเสี่ยง: ปานกลางค่อนข้างสูง</strong></p>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_TCA.pdf" target="_blank">Fact Sheet</a>
+                    </div>
+                    <div class="fund-card">
+                        <h4>AIA-TMA</h4>
+                        <p>(Moderate Allocation)<br><strong>ความเสี่ยง: ปานกลางค่อนข้างสูง</strong></p>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_TMA.pdf" target="_blank">Fact Sheet</a>
+                    </div>
+                    <div class="fund-card">
+                        <h4>AIA-TAA</h4>
+                        <p>(Aggressive Allocation)<br><strong>ความเสี่ยง: สูง</strong></p>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_TAA.pdf" target="_blank">Fact Sheet</a>
+                    </div>
+                </div>
+
+                <h3 class="fund-category-title">กลุ่มที่ 2: ลงทุนผสม (Combined Allocation)</h3>
+                <div class="fund-grid" style="grid-template-columns: 1fr 1fr; max-width: 730px; margin-left: auto; margin-right: auto;">
+                    <div class="fund-card">
+                        <h4>AIA-ICA</h4>
+                        <p>(Combined Conventional)<br><strong>ความเสี่ยง: ปานกลางค่อนข้างสูง</strong></p>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_ICA.pdf" target="_blank">Fact Sheet</a>
+                    </div>
+                    <div class="fund-card">
+                        <h4>AIA-IMA</h4>
+                        <p>(Combined Moderate)<br><strong>ความเสี่ยง: ปานกลางค่อนข้างสูง</strong></p>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_IMA.pdf" target="_blank">Fact Sheet</a>
+                    </div>
+                </div>
+
+                <h3 class="fund-category-title">กลุ่มที่ 3: ลงทุนต่างประเทศ (Global Allocation)</h3>
+                <div class="fund-grid" style="grid-template-columns: 1fr; max-width: 350px; margin-left: auto; margin-right: auto;">
+                    <div class="fund-card">
+                        <h4>AIA-GEQ</h4>
+                        <p>(Global Equity)<br><strong>ความเสี่ยง: สูง</strong></p>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_GEQ.pdf" target="_blank">Fact Sheet</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="slide" id="contact">
+            <div class="content-wrapper">
+                <h2>ที่ปรึกษาด้านการวางแผนการเงิน<br>และการลงทุน</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3 style="color: var(--navy); margin-bottom: 30px;">เปรมวิชช์ กรสิงห์วิจิตร (ต้น)</h3>
+                        <p><strong>ตำแหน่ง:</strong> ตัวแทนประกันชีวิต (MDRT)<br>และ ผู้แนะนำการลงทุนที่ได้รับอนุญาต</p>
+                        <p><strong>โทร:</strong> 061-590-9555<br>
+                        <strong>อีเมล:</strong> pkornsingwichitch@gmail.com</p>
+                        
+                        <p class="license">
+                            เลขที่ใบอนุญาตตัวแทน: 5901097451<br>
+                            เลขทะเบียนใบอนุญาตผู้แนะนำการลงทุน: IC087357
+                        </p>
+                    </div>
+                    <img src="https://i.postimg.cc/2S5SySZB/QR-CODE-Line-khxng-perm-w-chch.jpg" alt="QR Code Line">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="appendix">
+            <div class="content-wrapper">
+                <h2>ภาคผนวก: เอกสารประกอบการนำเสนอ</h2>
+                <p>คุณเกียรติอนันต์สามารถศึกษาเอกสารอ้างอิงหรือข้อมูลเพิ่มเติมซึ่งได้รวบรวมไว้ได้จากเอกสารในส่วนภาคผนวกนี้ครับ</p>
+                
+                <div class="appendix-grid">
+                    <div class="doc-card">
+                        <div class="doc-card-content">
+                            <span class="doc-icon">📄</span>
+                            <div class="doc-title">โบรชัวร์ AIA Issara Plus (Unit Linked)</div>
+                            <p class="doc-desc">เอกสารทางการของแบบประกัน สรุปผลประโยชน์และความคุ้มครองหลัก</p>
+                        </div>
+                        <div class="doc-card-action">
+                            <a href="https://www.aia.co.th/content/dam/th-wise/images/th/our-products/si_117_aia-issara-plus-unit-linked/AIA_Issara_Plus_(Unit%20Linked)_28122022.pdf" target="_blank">เปิดอ่าน (PDF) &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-card-content">
+                            <span class="doc-icon">📄</span>
+                            <div class="doc-title">โบรชัวร์ สัญญาเพิ่มเติม UDR</div>
+                            <p class="doc-desc">รายละเอียดสัญญาเพิ่มเติมสุขภาพ (UDR) ทั้งหมดที่แนบในกรมธรรม์นี้</p>
+                        </div>
+                        <div class="doc-card-action">
+                            <a href="https://www.aia.co.th/content/dam/th-wise/docs/our-product/new-udr-brochure3Jan.pdf" target="_blank">เปิดอ่าน (PDF) &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-card-content">
+                            <span class="doc-icon">📄</span>
+                            <div class="doc-title">โบรชัวร์ AIA Vitality (ยูนิต ลิงค์)</div>
+                            <p class="doc-desc">ข้อมูลโครงการ AIA Vitality และสิทธิประโยชน์ "เงินคืนค่าการประกันภัย"</p>
+                        </div>
+                        <div class="doc-card-action">
+                            <a href="https://www.aia.co.th/content/dam/th-wise/images/th/campaigns-promotion/vitality/AIA-Vitality-Brochure-th.pdf" target="_blank">เปิดอ่าน (PDF) &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-card-content">
+                            <span class="doc-icon">📈</span>
+                            <div class="doc-title">เอกสารข้อมูลกองทุนรวม (Fund Fact Sheets)</div>
+                            <p class="doc-desc">ข้อมูลสำคัญของกองทุนรวมทั้ง 6 กองทุน (Fund Fact Sheets)</p>
+                        </div>
+                        <div class="doc-card-action">
+                            <a href="#fund-modal">เปิดอ่าน (Popup) &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-card-content">
+                            <span class="doc-icon">🔗</span>
+                            <div class="doc-title">อภิธานศัพท์ (Glossary)</div>
+                            <p class="doc-desc">คำอธิบายคำศัพท์เฉพาะที่เกี่ยวข้องกับการประกันควบการลงทุน</p>
+                        </div>
+                        <div class="doc-card-action">
+                            <a href="#glossary-modal">เปิดอ่าน (Popup) &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="disclaimer-box">
+                    <p>ข้อสงวนสิทธิ์และข้อควรทราบ</p>
+                    <ul>
+                        <li>มูลค่า(คาดการณ์)รับซื้อคืนหน่วยลงทุน: คำนวณที่อัตราผลตอบแทนประมาณการ 5% ต่อปี หลังหักค่าใช้จ่าย</li>
+                        <li>ผลตอบแทนจากการลงทุน: ขึ้นอยู่กับผลงานกองทุน ไม่ใช่การรับประกันผลตอบแทน</li>
+                        <li>ข้อมูลอ้างอิง: จาก AIA iPos+ Version 50.8 เป็นตัวอย่าง ไม่ใช่ผลตอบแทนจริง เงื่อนไขตามกรมธรรม์</li>
+                        <li>เอกสารนี้: เป็นข้อมูลสรุปเบื้องต้นเท่านั้น</li>
+                        <li><strong>คำเตือน:</strong> การลงทุนมีความเสี่ยง ผู้ซื้อควรทำความเข้าใจรายละเอียด เงื่อนไข ข้อยกเว้นก่อนตัดสินใจ ผลงานในอดีตไม่ยืนยันผลงานในอนาคต</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        
+        </main>
+
+    <div id="glossary-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📖 อภิธานศัพท์ (Glossary)</h2>
+                <a href="#" class="modal-close">&times;</a>
+                <input type="search" id="glossary-search" placeholder="🔍 ค้นหาคำศัพท์... เช่น COI, UDR, RPP">
+            </div>
+            
+            <div class="modal-body">
+                <div class="glossary-group-title">ก</div>
+                <div class="glossary-item">
+                    <h4>การถอนเงินจากกรมธรรม์ (Withdrawal)</h4>
+                    <p>คือ การถอนเงินบางส่วนออกจากกรมธรรม์ (ในเอกสารเรียกว่า "เพิ่ม/ถอน เงินออม" ) ซึ่งจะทำให้มูลค่าบัญชีกรมธรรม์ลดลง และอาจส่งผลให้ผลประโยชน์กรณีเสียชีวิตลดลง หรือกรมธรรม์สิ้นผลบังคับเร็วขึ้น.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>การทยอยลงทุนอย่างสม่ำเสมอ (Dollar-Cost Averaging - DCA)</h4>
+                    <p>เป็นสิทธิประโยชน์ของผู้เอาประกันภัย คือ การทยอยลงทุนอย่างสม่ำเสมอเพื่อลดความเสี่ยงจากความผันผวนของตลาด.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>การปรับสัดส่วนการลงทุนอัตโนมัติ (Automatic Fund Rebalancing)</h4>
+                    <p>เป็นสิทธิประโยชน์ของผู้เอาประกันภัย คือ การปรับสัดส่วนกองทุนอัตโนมัติ เพื่อคงสัดส่วนการจัดสรรการลงทุนตามวัตถุประสงค์ที่กำหนดไว้ให้คงเดิม.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>การสับเปลี่ยนกองทุน (Fund Switching)</h4>
+                    <p>เป็นสิทธิประโยชน์ของผู้เอาประกันภัย สามารถทำได้โดยไม่มีค่าธรรมเนียม และมีจำนวนเงินขั้นต่ำในการสับเปลี่ยนครั้งละ 1,000 บาท.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>การหยุดพักชำระเบี้ย (Premium Holiday)</h4>
+                    <p>เป็นสิทธิประโยชน์ของผู้เอาประกันภัย ที่สามารถหยุดพักชำระเบี้ยได้ เมื่อกรมธรรม์มีอายุครบ 3 ปี มีการชำระเบี้ยฯ RPP ตามที่กำหนด และมีมูลค่ารับซื้อคืนหน่วยลงทุนเพียงพอ.</p>
+                </div>
+
+                <div class="glossary-group-title">ค</div>
+                <div class="glossary-item">
+                    <h4>ค่าการประกันภัย (Cost of Insurance - COI / COR)</h4>
+                    <p>คือ ค่าใช้จ่ายที่หักเป็นรายเดือนจากการขายคืนหน่วยลงทุนอัตโนมัติ เพื่อเป็นค่าคุ้มครองชีวิต (COI) และค่าคุ้มครองสัญญาเพิ่มเติม UDR (COR).</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>ค่าใช้จ่ายในการดำเนินการประกันภัย</h4>
+                    <p>เป็นหนึ่งในค่าธรรมเนียมกรมธรรม์ โดยจะหักออกจากเบี้ยประกันภัยหลักเพื่อความคุ้มครอง (RPP) ทุกครั้งที่ชำระเบี้ย. อัตราจะคิดเป็นร้อยละของเบี้ยฯ RPP โดยจะลดลงตามปีกรมธรรม์.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>ค่าธรรมเนียมการบริหารกรมธรรม์</h4>
+                    <p>เป็นหนึ่งในค่าธรรมเนียมกรมธรรม์ ในอัตรา 0.7% ต่อปี ของมูลค่ารับซื้อคืนหน่วยลงทุน. โดยจะหักเป็นรายเดือนจากการขายคืนหน่วยลงทุนอัตโนมัติ.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>ค่าธรรมเนียมในการถอนเงินจากกรมธรรม์</h4>
+                    <p>กรณีถอนเงินจากกรมธรรม์ภายใน 2 ปีแรก บริษัทจะคิดค่าธรรมเนียม 50% ของมูลค่ารับซื้อคืนหน่วยลงทุนของเบี้ยฯ RPP ที่ถอน.
+บริษัทจะไม่คิดค่าธรรมเนียมนี้ หากกรมธรรม์มีผลบังคับมากกว่า 2 ปี (และชำระเบี้ยฯ RPP ครบตามงวดที่กำหนด).
+บริษัทจะไม่คิดค่าธรรมเนียมในการถอนเงินจากหน่วยลงทุนของเบี้ยประกันภัยเพิ่มเติมพิเศษ (ATU/RTU).</p>
+                </div>
+
+                <div class="glossary-group-title">ง</div>
+                <div class="glossary-item">
+                    <h4>เงินคืนค่าการประกันภัย (สำหรับ AIA Vitality Unit Linked)</h4>
+                    <p>เป็นสิทธิประโยชน์สำหรับแบบประกันที่เข้าร่วมโครงการ "เอไอเอ ไวทัลลิตี้ ยูนิต ลิงค์"
+ปีแรก: ได้รับเงินคืนค่าการประกันภัยปีแรก (สูงสุด 10% หรือ 5% ขึ้นอยู่กับแบบประกัน) และอาจได้รับ "Extra Bonus" เพิ่ม 5% หากมีแบบประกันที่เข้าร่วม 3 แบบขึ้นไปในกรมธรรม์เดียวกัน
+ปีต่ออายุ: ได้รับเงินคืนค่าการประกันภัยตามสถานะเอไอเอ ไวทัลลิตี้ สูงสุด 25%.</p>
+                </div>
+
+                <div class="glossary-group-title">บ</div>
+                <div class="glossary-item">
+                    <h4>บรอนซ์, ซิลเวอร์, โกลด์, แพลทินัม (สถานะไวทัลลิตี้)</h4>
+                    <p>เป็นสถานะในโครงการเอไอเอ ไวทัลลิตี้ ที่สมาชิกสามารถสะสมคะแนนจากการทำกิจกรรมสุขภาพเพื่อเลื่อนสถานะ. สถานะยิ่งสูง สิทธิประโยชน์ยิ่งเพิ่มขึ้น รวมถึงอัตรา "ไวทัลlิตี้ โบนัส" หรือ "เงินคืนค่าการประกันภัย".</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>โบนัสพิเศษยามเกษียณ (Retirement Bonus)</h4>
+                    <p>เป็นสิทธิประโยชน์ของผู้เอาประกันภัย รับโบนัส 0.45% ต่อปี ของมูลค่ารับซื้อคืนหน่วยลงทุนของเบี้ยฯ RPP (ภายใต้เงื่อนไขที่บริษัทกำหนด).</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>เบี้ยประกันภัยเพิ่มเติมพิเศษ (Top-up Premium - ATU/RTU)</h4>
+                    <p>คือ เบี้ยประกันภัยที่ผู้เอาประกันภัยสามารถเลือกชำระเพิ่มได้.
+RTU (Regular Top-Up): ชำระเป็นประจำพร้อมเบี้ยประกันภัยหลัก.
+ATU (Ad-hoc Top-Up): ไม่ได้ชำระเป็นประจำ.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>เบี้ยประกันภัยหลักเพื่อความคุ้มครอง (Regular Premium - RPP)</h4>
+                    <p>คือ เบี้ยประกันภัยหลักที่ใช้สำหรับความคุ้มครอง. เบี้ยประกันภัยหลังหักค่าใช้จ่ายจะถูกนำไปลงทุน.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>เบี้ยฯ รวม RPP</h4>
+                    <p>สำหรับกรมธรรม์ที่มีสัญญาเพิ่มเติม UDR เบี้ยฯ รวม RPP จะประกอบด้วย "เบี้ยฯ RPP (เบี้ยประกันภัยหลักเพื่อความคุ้มครอง)" บวกด้วย "Target Premium (เบี้ยประกันภัยส่วนที่เพิ่มขึ้นสำหรับสัญญาเพิ่มเติม UDR)".</p>
+                </div>
+
+                <div class="glossary-group-title">พ</div>
+                <div class="glossary-item">
+                    <h4>พอร์ตโฟลิโอที่แนะนำ (Recommended Portfolio)</h4>
+                    <p>คือ พอร์ตโฟลิโอที่ผู้จัดการกองทุนเป็นผู้คัดเลือกกองทุนและสัดส่วนการลงทุนตามคะแนนจากการประเมินความเหมาะสมในการลงทุน. เป็นส่วนหนึ่งของบริการ AIA InvestPro.</p>
+                </div>
+
+                <div class="glossary-group-title">ม</div>
+                <div class="glossary-item">
+                    <h4>มูลค่ารับซื้อคืนหน่วยลงทุน (Redemption Value)</h4>
+                    <p>คือ มูลค่าบัญชีกรมธรรม์ที่เกิดจากการนำเบี้ยประกันภัยหลังหักค่าใช้จ่ายไปลงทุนในกองทุนรวม. กรมธรรม์จะมีความคุ้มครองตลอดชีพ (ถึง 99 ปี) ตราบเท่าที่มูลค่านี้มีเพียงพอสำหรับหักค่าใช้จ่ายต่างๆ. หากผู้เอาประกันภัยมีชีวิตอยู่จนครบกำหนดสัญญา (อายุ 99 ปี) บริษัทจะจ่ายมูลค่ารับซื้อคืนหน่วยลงทุนให้.</p>
+                </div>
+
+                <div class="glossary-group-title">ย</div>
+                <div class="glossary-item">
+                    <h4>ยูนิต ลิงค์ (Unit Linked)</h4>
+                    <p>คือ แบบประกันชีวิตควบการลงทุน. เบี้ยประกันภัยหลังหักค่าใช้จ่ายจะถูกนำไปลงทุนผ่านกองทุนรวม. การทำประกันชีวิตแบบยูนิต ลิงค์ ไม่ใช่การฝากเงินและมีความเสี่ยง.</p>
+                </div>
+
+                <div class="glossary-group-title">ส</div>
+                <div class="glossary-item">
+                    <h4>สัญญาเพิ่มเติม UDR (Unit Deducting Rider)</h4>
+                    <p>คือ สัญญาเพิ่มเติมที่ออกแบบมาสำหรับแนบกับ AIA Issara Plus (Unit Linked) เท่านั้น.
+เบี้ยประกันภัยสำหรับสัญญา UDR ไม่ได้จ่ายแยกต่างหาก แต่จะชำระค่าการประกันภัย (COR) โดยการ "ขายคืนหน่วยลงทุนของกองทุนภายใต้กรมธรรม์โดยอัตโนมัติเป็นรายเดือน".
+สัญญาเพิ่มเติมกลุ่มนี้ (เช่น สุขภาพ) เป็นสัญญาที่ "การันตีการต่ออายุ".</p>
+                </div>
+
+                <div class="glossary-group-title">อ</div>
+                <div class="glossary-item">
+                    <h4>เอไอเอ ไวทัลลิตี้ (AIA Vitality)</h4>
+                    <p>โครงการที่สนับสนุนและส่งเสริมให้ผู้เอาประกันภัยดูแลสุขภาพเพื่อชีวิตที่ดีขึ้น ผ่านการสะสมคะแนนจากการทำกิจกรรมสุขภาพ (เช่น ออกกำลังกาย, ตรวจสุขภาพ) เพื่อเลื่อนสถานะและรับสิทธิประโยชน์.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>เอไอเอ ไวทัลลิตี้ โบนัส (AIA Vitality Bonus)</h4>
+                    <p>เป็นผลประโยชน์เงินคืนสำหรับสัญญาเพิ่มเติมที่เข้าร่วมโครงการ (คนละกลุ่มกับ UDR). จ่ายโบนัสทุก 1 ปีกรมธรรม์ โดยคำนวณจากสถานะไวทัลลิตี้.
+กลุ่มโรคร้ายแรง: รับโบนัสสูงสุด 20%
+กลุ่มค่ารักษาพยาบาล/ค่าชดเชย: รับโบนัสสูงสุด 15% (หากไม่มีการเคลม).</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>เอไอเอ ไวทัลลิตี้ ยูนิต ลิงค์ (AIA Vitality Unit Linked)</h4>
+                    <p>เป็นแบบประกันยูนิต ลิงค์ (เช่น AIA Issara Plus) ที่เข้าร่วมโครงการเอไอเอ ไวทัลลิตี้. สิทธิประโยชน์หลักคือ "เงินคืนค่าการประกันภัย".</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>เอไอเอ อิสระ พลัส (AIA Issara Plus (Unit Linked))</h4>
+                    <p>ชื่อแบบประกันชีวิตควบการลงทุน ที่ให้ความคุ้มครองตลอดชีพ (ถึงอายุ 99 ปี) ตราบเท่าที่มูลค่ารับซื้อคืนหน่วยลงทุนมีเพียงพอ. เบี้ยประกันภัยหลังหักค่าใช้จ่ายจะถูกนำไปลงทุนในกองทุนรวมที่คัดสรรโดย AIA.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4>AIA InvestPro</h4>
+                    <p>บริการที่ช่วยให้การลงทุนเป็นเรื่องง่าย โดยมีทีมผู้เชี่ยวชาญกว่า 250 คนใน 18 ประเทศ และพันธมิตรชั้นนำระดับโลก (เช่น BlackRock, Wellington Management) มาช่วยบริหารการลงทุนและปรับพอร์ตให้เหมาะสมกับสถานการณ์.</p>
+                </div>
+                
+                <div class="glossary-group-title">T</div>
+                <div class="glossary-item">
+                    <h4>Target Premium</h4>
+                    <p>คือ เบี้ยประกันภัยส่วนที่เพิ่มขึ้นสำหรับสัญญาเพิ่มเติม UDR ซึ่งเป็นส่วนหนึ่งของ "เบี้ยฯ รวม RPP". มีวัตถุประสงค์เพื่อทำให้มูลค่าบัญชีกรมธรรม์เพียงพอสำหรับชำระค่าการประกันภัย (COR) ของสัญญาเพิ่มเติมนั้นๆ.</p>
+                </div>
+
+            </div> 
+        </div>
+    </div>
+
+    <div id="fund-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📈 กองทุนรวมที่คัดสรร (AIA Issara Plus)</h2>
+                <a href="#" class="modal-close">&times;</a>
+            </div>
+            
+            <div class="modal-body">
+                <ul class="fund-list">
+                    <li class="fund-list-item">
+                        <div>
+                            <h4>AIA-TCA</h4>
+                            <p>กองทุนเปิด เอไอเอ คอนเวนชั่นนอล อโลเคชั่น ฟันด์</p>
+                        </div>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_TCA.pdf" target="_blank">Fact Sheet</a>
+                    </li>
+                    <li class="fund-list-item">
+                        <div>
+                            <h4>AIA-TMA</h4>
+                            <p>กองทุนเปิด เอไอเอ โมเดอเรท อโลเคชั่น ฟันด์</p>
+                        </div>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_TMA.pdf" target="_blank">Fact Sheet</a>
+                    </li>
+                    <li class="fund-list-item">
+                        <div>
+                            <h4>AIA-TAA</h4>
+                            <p>กองทุนเปิด เอไอเอ แอกเกรสซีฟ อโลเคชั่น ฟันด์</p>
+                        </div>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_TAA.pdf" target="_blank">Fact Sheet</a>
+                    </li>
+                    <li class="fund-list-item">
+                        <div>
+                            <h4>AIA-ICA</h4>
+                            <p>กองทุนเปิด เอไอเอ คอมบายด์ คอนเวนชั่นนอล อโลเคชั่น ฟันด์</p>
+                        </div>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_ICA.pdf" target="_blank">Fact Sheet</a>
+                    </li>
+                    <li class="fund-list-item">
+                        <div>
+                            <h4>AIA-IMA</h4>
+                            <p>กองทุนเปิด เอไอเอ คอมบายด์ โมเดอเรท อโลเคชั่น ฟันด์</p>
+                        </div>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_IMA.pdf" target="_blank">Fact Sheet</a>
+                    </li>
+                    <li class="fund-list-item">
+                        <div>
+                            <h4>AIA-GEQ</h4>
+                            <p>กองทุนเปิด เอไอเอ โกลบอล อิควิตี้ ฟันด์</p>
+                        </div>
+                        <a href="https://www.aiaim.co.th/content/dam/th-aiaim/pdf/factsheet_GEQ.pdf" target="_blank">Fact Sheet</a>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </div>
+    
+    <div id="image-modal" class="modal">
+        <a href="#" class="modal-close-overlay"></a>
+        
+        <div class="modal-content image-modal-content">
+            <img src="https://i.postimg.cc/tg3nRf0D/kho-rngsr-ang-baeb-pra-k-n-AIA-Issara-Plus-Unit-Linked.png" alt="AIA Issara Plus Structure">
+        </div>
+        
+        <a href="#" class="modal-close">&times;</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            
+            // 1. Glossary Search Functionality
+            const searchInput = document.getElementById('glossary-search');
+            if (searchInput) {
+                const modalBody = document.querySelector('#glossary-modal .modal-body');
+                const items = modalBody.getElementsByClassName('glossary-item');
+                const groupTitles = modalBody.getElementsByClassName('glossary-group-title');
+
+                searchInput.addEventListener('input', function() {
+                    const filter = searchInput.value.toLowerCase().trim();
+                    
+                    let anyItemVisible = false;
+
+                    for (let i = 0; i < items.length; i++) {
+                        const item = items[i];
+                        const text = item.textContent || item.innerText;
+                        if (text.toLowerCase().indexOf(filter) > -1) {
+                            item.style.display = "";
+                            anyItemVisible = true;
+                        } else {
+                            item.style.display = "none";
+                        }
+                    }
+
+                    // Hide group titles if filter is active
+                    const isFiltering = filter.length > 0;
+                    for (let i = 0; i < groupTitles.length; i++) {
+                         groupTitles[i].style.display = isFiltering ? "none" : "";
+                    }
+                });
+            }
+
+            // 2. Intersection Observer for Animations
+            const animatedElements = document.querySelectorAll('.animated');
+            if ("IntersectionObserver" in window) {
+                let observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            let el = entry.target;
+                            let animationType = el.dataset.animation;
+                            let animationDelay = el.dataset.delay || "0";
+
+                            el.style.animationDelay = animationDelay + "s";
+
+                            if (animationType === "fade-in-up") {
+                                el.classList.add('do-animate-fade-in-up');
+                            } else if (animationType === "spotlight") {
+                                el.classList.add('do-animate-spotlight');
+                            }
+                            
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.1 }); // Trigger when 10% is visible
+
+                animatedElements.forEach(el => {
+                    observer.observe(el);
+                });
+            } else {
+                // Fallback for old browsers
+                animatedElements.forEach(el => {
+                    el.style.opacity = 1;
+                });
+            }
+
+        });
+    </script>
+
 </body>
 </html>
